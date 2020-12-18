@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>LECAR</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  .fakeimg {
+    height: 250px;
+    width:300px;
+    background: #aaa;
+  }
+  #logo{
+    height: auto;
+    width: auto;
+  }
+#teste1 {
+  display: flex;
+  flex-direction: row;
+}
+#teste2 {
+  display: flex;
+  flex-direction: column;
+}
+#teste3 {
+  display: flex;
+  flex-direction: column;
+}
+
+  </style>
+</head>
+<body onload="excluir()">
+  <script>
+    function funcao1()
+    {
+    var x;
+    var display;
+    var r=confirm("Você tem certeza que quer excluir o carro?");
+    if (r==true)
+      {
+      x="Sim";
+      alert("Carro excluído com sucesso!");
+      }
+    else
+      {
+      x="Cancelar";
+      alert("Operação cancelada!");
+      }
+    document.getElementById("demo").innerHTML=x;
+    }
+
+  </script>
+
+  <div class="jumbotron text-center" style="margin-bottom:0">
+    <img src="_fotos/logo.png" id="logo">
+  </div>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li class="active"><a href="listagem.html">Listagem</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid" id="teste1">
+    <div>
+      <h2>Veja nossos modelos!</h2>
+      <div>
+        <img src="_fotos/bmw.jpg" class="fakeimg">
+       </div>
+        <div id= "teste3">
+          <h3><strong>Modelo do veículo</strong><br>320i</h3><br>
+          <div id="teste3">
+            <div  class= "teste3" >
+              <h4><strong>Marca:</strong>BMW</h4>
+              <h4><strong>Preço:</strong>R$200.000,00</h4>    
+              <h4><strong>Cor:</strong>Cinza</h4>  
+              <p>Automático</p>
+              <a href="cadastro.html" class="btn btn-primary">Editar</a>
+              <button  class= "btn btn-danger"onclick="funcao1()">Excluir</button>
+            </div>
+          </div>
+        </div>    
+     </div>
+
+     <div class="col-sm-2">
+      <br><br><br>
+      <div >
+        <img src="_fotos/onyx.jpg" class="fakeimg">
+       </div>
+        <div>
+          <h3><strong>Modelo do veículo</strong><br>Onix Activ 2020</h3><br>
+            <h4><strong>Marca:</strong>Chevrolet</h4>
+            <h4><strong>Preço:</strong>R$85.500,00</h4>    
+            <h4><strong>Cor:</strong>Bordô</h4>  
+            <p>Motor 1.4</p>
+        </div>    
+        <div class="teste" >
+          <a href="cadastro.html" class="btn btn-primary">Editar</a>
+          <button  class= "btn btn-danger"onclick="funcao1()" >Excluir</button>
+        </div>
+     </div>
+
+     <div class="col-sm-2">
+      <br><br><br>
+      <div >
+        <img src="_fotos/opala.jpg" class="fakeimg">
+       </div>
+        <div>
+          <h3><strong>Modelo do veículo</strong><br> Opala</h3>  <br>
+            <h4><strong>Marca:</strong>Chevrolet</h4>
+            <h4><strong>Preço:</strong>R$12.500,00</h4>    
+            <h4><strong>Cor:</strong>Branco</h4>  
+            <p>Nenhum pouco econonomico</p>
+        </div>    
+        <div class="teste" >
+          <a href="cadastro.html" class="btn btn-primary">Editar</a>
+          <button  class= "btn btn-danger"onclick="funcao1()" >Excluir</button>
+        </div>
+
+     </div><div class="col-sm-2">
+      <br><br><br>
+      <div >
+        <img src="_fotos/fusion.jpg" class="fakeimg">
+       </div>
+        <div>
+          <h3><strong>Modelo do veículo</strong><br>Fusion </h3>  <br>
+            <h4><strong>Marca:</strong>Ford</h4>
+            <h4><strong>Preço:</strong>R$95.500,00</h4>    
+            <h4><strong>Cor:</strong>Branco Pérola</h4>  
+            <p>Um dos melhores carro do mercado</p>
+        </div>    
+        <div class="teste" >
+          <a href="cadastro.html" class="btn btn-primary">Editar</a>
+          <button  class= "btn btn-danger"onclick="funcao1()" >Excluir</button>
+        </div>
+     </div>
+
+     <div class="col-sm-2">
+      <br><br><br>
+      <div >
+        <img src="_fotos/toro.jpg" class="fakeimg">
+       </div>
+        <div>
+          <h3><strong>Modelo do veículo</strong><br>Toro </h3>  <br>
+            <h4><strong>Marca:</strong>Fiat</h4>
+            <h4><strong>Preço:</strong>R$74.500,00</h4>    
+            <h4><strong>Cor:</strong>Branca</h4>  
+            <p>Um dos modelos mais desejados pelos brasileiros</p>
+        </div>    
+        <div class="teste" >
+          <a href="cadastro.html" class="btn btn-primary">Editar</a>
+          <button  class= "btn btn-danger"onclick="funcao1()" >Excluir</button>
+        </div>
+     </div>
+
+     <div class="col-sm-2">
+      <br><br><br>
+      <div >
+        <img src="_fotos/hb20.jpg" class="fakeimg">
+       </div>
+        <div>
+          <h3><strong>Modelo do veículo</strong><br>HB20 </h3>  <br>
+            <h4><strong>Marca:</strong>Hyundai</h4>
+            <h4><strong>Preço:</strong>R$12.500,00</h4>    
+            <h4><strong>Cor:</strong>Cinza escuro</h4>  
+            <p>Um dos modelos mais populares, porém, bem completo</p>
+        </div>    
+        <div class="teste" >
+          <a href="cadastro.html" class="btn btn-primary">Editar</a>
+          <button  class= "btn btn-danger"onclick="funcao1()" >Excluir</button>
+        </div>
+     </div>
+    
+</div>
+
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <footer>&copy Leonardo de Souza Camargo - Instituto Federal do Sul de Minas Gerais - 2020</footer>
+</div>
+
+</body>
+</html>

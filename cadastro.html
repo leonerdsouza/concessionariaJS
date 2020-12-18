@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>LECAR</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/vanilla-masker@1.1.1/build/vanilla-masker.min.js"></script>
+  <script>
+    var vmarca,vmodelo,vano,vpreco,vcor,vdescricao;
+   
+    if(typeof(Storage)!="undefined"){
+
+    }else{
+      document.write("Sem suporte a webstorage!");
+    }
+    function cadastro(){
+      vmarca=document.getElementById("inputMarca").value;
+      vmodelo=document.getElementById("inputModelo").value;
+      vano=document.getElementById("quantity").value;
+      vpreco=document.getElementById("inputPreco").value;
+      vcor=document.getElementById("inputCor").value;
+      vdescricao=document.getElementById("inputDescricao").value;
+      localStorage.marca=vmarca;
+      localStorage.modelo=vmodelo;
+      localStorage.ano=vano;
+      localStorage.preco=vpreco;
+      localStorage.cor=vcor;
+      localStorage.descricao=vdescricao;
+    }
+  </script>
+  <script>
+    function mascara(o,f){
+      v_obj=o
+      v_fun=f
+    setTimeout("execmascara()",1);
+    }
+    function execmascara(){
+        v_obj.value=v_fun(v_obj.value);
+    }
+
+    function soNumeros(v){
+        return v.replace(/\D/g,"");
+    }
+  </script>
+
+  <style>
+    .fakeimg {
+      height: 200px;
+      background: #aaa;
+    }
+    #logo{
+      height: auto;
+      width: auto;
+    }
+  </style>
+</head>
+<body>
+  
+
+  <div class="jumbotron text-center" style="margin-bottom:0">
+    <img src="_fotos/logo.png" id="logo">
+  </div>
+  
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="listagem.html">Listagem</a></li>
+        <li class="active"><a href="cadastro.html">Cadastro</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <form>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputMarca">Marca<span class="text-danger">
+          *
+        </span></label>
+        <input type="text" class="form-control" id="inputMarca" placeholder="Insira a marca"  minlength="2" required >
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputModelo">Modelo<span class="text-danger">
+          *
+        </span></label>
+        <input type="text" class="form-control" id="inputModelo" placeholder="Insira o  modelo"  minlength="2" required >
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label  for="quantity">Ano<span class="text-danger">
+        *
+      </span></label>
+      <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Insira o ano do modelo" onkeypress="mascara(this.soNumeros)" min="1900" required>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPreco">Preço<span class="text-danger">
+        *
+      </span></label>
+      <input type="text" class="form-control" id="inputPreco" placeholder="Insira o preço do modelo" onkeypress="mascara(this,soNumeros)" maxLength ="8"required >
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputCity">Foto<span class="text-danger">
+          *
+        </span></label>
+        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputCor">Cor<span class="text-danger" >
+          *
+        </span></label>
+        <select required id="inputCor" class="form-control" required>
+          <option>--Selecionar--</option>
+          <option>Água</option>
+          <option>Água Marinha</option>
+          <option>Alizarina</option>
+          <option>Amarelo</option>
+          <option>Amarelo Esverdeado</option>
+          <option>Âmbar</option>
+          <option>Azul</option>
+          <option>Azul Celeste</option>
+          <option>Azul turquesa</option>
+          <option>Bege</option>
+          <option>Bordô</option>
+          <option>Borgonha</option>
+          <option>Branco</option>
+          <option>Branco Gelo</option>
+          <option>Branco Pérola</option>
+          <option>Bronze</option>
+          <option>Carmesim</option>
+          <option>Cereja</option>
+          <option>Ciano</option>
+          <option>Cinza</option>
+          <option>Dourado</option>
+          <option>Ébano</option>
+          <option>Escarlate</option>
+          <option>Esmeralda</option>
+          <option>Ferrugem</option>
+          <option>Fúschsia</option>
+          <option>Grená</option>
+          <option>Goiaba</option>
+          <option>Herbal</option>
+          <option>Índigo</option>
+          <option>Jade</option>
+          <option>Jambo</option>
+          <option>Kiwi</option>
+          <option>Laranja</option>
+          <option>Lílas</option>
+          <option>Magenta</option>
+          <option>Marfim</option>
+          <option>Marrom</option>
+          <option>Naval</option>
+          <option>Neve</option>
+          <option>Ocre</option>
+          <option>Oliva</option>
+          <option>Ouro</option>
+          <option>Prata</option>
+          <option>Preto</option>
+          <option>Púrpura</option>
+          <option>Quantum</option>
+          <option>Rosa</option>
+          <option>Roxo</option>
+          <option>Salmão</option>
+          <option>Terracota</option>
+          <option>Turquesa</option>
+          <option>Urucum</option>
+          <option>Verde</option>
+          <option>Vermelho</option>
+          <option>Violeta</option>
+          <option>Xanadu</option>
+          <option>Zaffre</option>
+        </select>
+      </div>
+      <div class="form-group col-md-12">
+        <label for="inputDescricao">Descrição<span class="text-danger">
+          *
+        </span></label>
+        <input type="text" id="inputDescricao" class="form-control" aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-lg" required >
+      </div>
+    </div>
+    <div class = "form-group col-md-12">
+      <input type="submit" class="btn btn-primary" onclick="cadastro()">
+    </div>
+
+  </form>
+</div>
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <footer>&copy Leonardo de Souza Camargo - Instituto Federal do Sul de Minas Gerais - 2020</footer>
+</div>
+
+</body>
+</html>
